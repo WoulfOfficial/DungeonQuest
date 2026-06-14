@@ -17,13 +17,17 @@ public class Main {
 
             int choice = scanner.nextInt();
 
-            if (choice == 1) {
-                System.out.println("\nGame will start soon...\n");
-            } else if (choice == 2) {
-                System.out.println("Goodbye!");
-                break;
-            } else {
-                System.out.println("Invalid choice!\n");
+             if (choice == 1) {
+
+                   scanner.nextLine(); // consume the leftover newline
+
+                   System.out.print("Enter your hero's name: ");
+                   String name = scanner.nextLine();
+  
+                   Player player = new Player(name);
+
+                   System.out.println("\nWelcome, " + player.name + "!");
+                   player.showStats();
             }
         }
 
